@@ -5,7 +5,9 @@ import 'clauns.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(child: MainApp(), create: (context) => Cluans()));
+  runApp(
+    ChangeNotifierProvider(child: MainApp(), create: (context) => Cluans()),
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -23,7 +25,23 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(actions: [IconButton(onPressed: ()=> 1, icon: Icon(Icon.))],title: const Text("Cluans"),),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.read<Cluans>().sortByClue();
+            },
+            icon: const Icon(Icons.sort_by_alpha),
+          ),
+          IconButton(
+            onPressed: (){
+              context.read<Cluans>().sortByAnswer();
+            }, 
+            icon: const Icon(Icons.search)
+          ),
+        ],
+        title: const Text("Cluans"),
+      ),
       body: Center(child: ListViewPlayground(cluans: context.watch<Cluans>())),
     );
   }
@@ -40,7 +58,6 @@ class ListViewPlayground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Column(
         children: [

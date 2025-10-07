@@ -20,6 +20,16 @@ class Cluans extends ChangeNotifier {
     );
     notifyListeners();
   }
+
+  void sortByClue(){
+    _cluans.sort((a,b)=>a.clue!.length.compareTo(b.clue!.length));
+    notifyListeners();
+  }
+
+  void sortByAnswer(){
+    _cluans.sort((a,b)=>a.answer!.length.compareTo(b.answer!.length));
+    notifyListeners();
+  }
 }
 
 class ClaunsModel {
