@@ -75,6 +75,7 @@ class ListViewPlayground extends StatelessWidget {
                     cluans.cluanContent[index].answer!,
                     style: TextStyle(fontSize: 16, color: Colors.grey),
                   ),
+                  trailing: Text(cluans.cluanContent[index].date!),
                 ),
               ),
             ),

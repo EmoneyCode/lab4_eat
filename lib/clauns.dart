@@ -4,22 +4,15 @@ import 'package:flutter/material.dart';
 
 class Cluans extends ChangeNotifier {
   List<ClaunsModel> _cluans = [
-    ClaunsModel(clue: 'Bump or Spike', answer: 'Increase'),
-    ClaunsModel(clue: 'Canoodle', answer: 'Neck'),
-    ClaunsModel(clue: 'Gluttonous sort', answer: 'Hog'),
-    ClaunsModel(clue: 'Teed off', answer: 'Irate'),
-    ClaunsModel(clue: 'Shade akin to peridot', answer: 'Lime'),
+    ClaunsModel(clue: 'Bump or Spike', answer: 'Increase', date: 'Monday, 10/06/25'),
+    ClaunsModel(clue: 'Canoodle', answer: 'Neck', date: 'Monday, 10/06/25'),
+    ClaunsModel(clue: 'Gluttonous sort', answer: 'Hog', date: 'Monday, 10/06/25'),
+    ClaunsModel(clue: 'Teed off', answer: 'Irate', date: 'Monday, 10/06/25'),
+    ClaunsModel(clue: 'Shade akin to peridot', answer: 'Lime', date: 'Monday, 10/06/25'),
   ];
 
   List<ClaunsModel> get cluanContent => _cluans;
   int get numCluans => _cluans.length;
-
-  void addCluan({required String clue, required String answer}) {
-    _cluans.add(
-      ClaunsModel(clue: clue, answer: answer),
-    );
-    notifyListeners();
-  }
 
   void sortByClue(){
     _cluans.sort((a,b)=>a.clue!.toString().compareTo(b.clue!.toString()));
@@ -35,6 +28,7 @@ class Cluans extends ChangeNotifier {
 class ClaunsModel {
   String? clue;
   String? answer;
+  String? date;
 
-  ClaunsModel({required this.clue, required this.answer});
+  ClaunsModel({required this.clue, required this.answer, required this.date});
 }
