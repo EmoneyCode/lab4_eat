@@ -52,16 +52,12 @@ class ListViewPlayground extends StatelessWidget {
 
   const ListViewPlayground({super.key, required this.cluans});
 
-  void addCluan() {
-    cluans.addCluan(clue: 'Fester', answer: 'Christopher Lloyd');
-  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
         children: [
-          ElevatedButton(onPressed: addCluan, child: Text('Add Cluan')),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: SizedBox(
