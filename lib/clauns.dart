@@ -6,9 +6,9 @@ class Cluans extends ChangeNotifier {
   List<ClaunsModel> _cluans = [
     ClaunsModel(clue: 'Bump or Spike', answer: 'Increase'),
     ClaunsModel(clue: 'Canoodle', answer: 'Neck'),
-    ClaunsModel(clue: 'Gluttonous sort', answer: 'Catherine Zeta-Jones'),
-    ClaunsModel(clue: 'Teed off', answer: 'Luis Guzmán'),
-    ClaunsModel(clue: 'Shade akin to peridot', answer: 'Victor Dorobantu'),
+    ClaunsModel(clue: 'Gluttonous sort', answer: 'Hog'),
+    ClaunsModel(clue: 'Teed off', answer: 'Irate'),
+    ClaunsModel(clue: 'Shade akin to peridot', answer: 'Lime'),
   ];
 
   List<ClaunsModel> get cluanContent => _cluans;
@@ -22,7 +22,7 @@ class Cluans extends ChangeNotifier {
   }
 
   void sortByClue(){
-    _cluans.sort((a,b)=>a.clue!.length.compareTo(b.clue!.length));
+    _cluans.sort((a,b)=>a.clue!.toString().compareTo(b.clue!.toString()));
     notifyListeners();
   }
 
