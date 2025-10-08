@@ -1,5 +1,14 @@
 // ignore_for_file: dead_code, prefer_conditional_assignment
-
+/*
+Ethan Trammell
+Lab 5 
+October 5th 2025
+This is the lab 5 which should help us understand Notifier Providers
+No known bugs
+The lab became really easy after last fridays lecture (good job explaining it helped alot),
+because the previous lecture I was somewhat confused with the context.watch/read methods and
+their purpose. I used chatgpt to give me the names of the icons that I used. 
+*/
 import 'package:flutter/material.dart';
 import 'clauns.dart';
 import 'package:provider/provider.dart';
@@ -65,7 +74,7 @@ class ListViewPlayground extends StatelessWidget {
               child: ListView.separated(
                 separatorBuilder: (context, index) =>
                     Divider(color: Colors.white, thickness: 1.0),
-                itemCount: cluans.cluanContent.length,
+                   itemCount: cluans.cluanContent.length,
                 itemBuilder: (context, index) => ListTile(
                   title: Text(
                     cluans.cluanContent[index].clue!,
